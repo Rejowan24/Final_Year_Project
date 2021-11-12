@@ -27,16 +27,12 @@
                   <input type="text" name="fieldsname" class="form-control"  wire:model.defer="fields_name">
               </div>
               <div class="form-group">
-                  <label for="fieldsdate">Booking Date</label>
-                  <input type="date" name="fieldsdate" class="form-control"  wire:model.defer="booking_date">
+                  <label for="fieldsdate">Start Date</label>
+                  <input type="date" name="fieldsdate" class="form-control"  wire:model.defer="start_date">
               </div>
               <div class="form-group">
-                  <label for="fieldsdays">Booking Days</label>
-                  <input type="text" name="fieldsdays" class="form-control"  wire:model.defer="booking_days">
-              </div>
-              <div class="form-group">
-                  <label for="fieldstime">Booking Time</label>
-                  <input type="time" name="fieldstime" class="form-control"  wire:model.defer="booking_time">
+                  <label for="fieldsdays">End Date</label>
+                  <input type="date" name="fieldsdays" class="form-control"  wire:model.defer="end_date">
               </div>
               <div class="form-group">
                   <label for="description">Description</label>

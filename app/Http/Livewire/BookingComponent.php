@@ -3,7 +3,10 @@
 namespace App\Http\Livewire;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\BookingRequest;
 use App\Models\Booking;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade as PDF;
 
 
@@ -17,18 +20,16 @@ class BookingComponent extends Component
     public $email;
     public $address;
     public $fields_name;
-    public $booking_date;
-    public $booking_days;
-    public $booking_time;
+    public $start_date;
+    public $end_date;
     public $description;
     protected $rules = [
         'name' => 'required|min:3',
         'email' => 'required|email',
         'address' => 'required|min:3',
         'fields_name' => 'required',
-        'booking_date' => 'required',
-        'booking_days' => 'required',
-        'booking_time' => 'required',
+        'start_date' => 'required',
+        'end_date' => 'required',
         'description' => 'required',
     ];
 
@@ -37,10 +38,21 @@ class BookingComponent extends Component
         $booking = $this->validate();
         Booking::create($booking);
         $booking = Booking::latest()->first();
-        
-       
 
-        if($booking->fields_name === 'Cricket & Football')
+        $users = User::where('id','1')->get();
+        Notification::send($users, new BookingRequest($booking));    
+        session()->flash('success','submitted successfull');
+       
+        
+    }
+
+    public function download($id)
+    {
+     
+        $data = Booking::where('id',$id)->get();
+        dd($data);
+     
+     if($booking->fields_name === 'Cricket & Football')
         {   
            
            $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
@@ -92,10 +104,7 @@ class BookingComponent extends Component
         }else{
             return back()->with('Invalid');
         }
-       
-        ;
     }
-
 
     public function render()
     {

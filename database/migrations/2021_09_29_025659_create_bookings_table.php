@@ -15,14 +15,17 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->BigInteger('user_id')->unsigned()->nullable();
             $table->string('name');
             $table->string('email');
             $table->string('address');
             $table->string('fields_name');
-            $table->string('booking_date');
-            $table->string('booking_days');
-            $table->string('booking_time');
+            $table->string('start_date');
+            $table->string('end_date');
             $table->string('description');
+            $table->boolean('status')->default(false);
+            $table->boolean('is_approved')->default(false);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,10 @@ namespace App\Http\Livewire\Admin\Pages;
 
 use Livewire\Component;
 use App\Models\Booking;
+use App\Models\User;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\AdminReply;
 
 class AdminCricketComponent extends Component
 {
@@ -16,9 +19,8 @@ class AdminCricketComponent extends Component
     public $email;
     public $address;
     public $fields_name;
-    public $booking_date;
-    public $booking_days;
-    public $booking_time;
+    public $start_date;
+    public $end_date;
     public $description;
  
     public function resetInputFields()
@@ -27,9 +29,8 @@ class AdminCricketComponent extends Component
         $this->email = '';
         $this->address = '';
         $this->fields_name = '';
-        $this->booking_date = '';
-        $this->booking_days = '';
-        $this->booking_time = '';
+        $this->start_date = '';
+        $this->end_date = '';
         $this->description = '';
     }
 
@@ -41,9 +42,8 @@ class AdminCricketComponent extends Component
         $this->email = $booking->email;
         $this->address = $booking->address;
         $this->fields_name = $booking->fields_name;
-        $this->booking_date = $booking->booking_date;
-        $this->booking_days = $booking->booking_days;
-        $this->booking_time = $booking->booking_time;
+        $this->start_date = $booking->start_date;
+        $this->end_date = $booking->end_date;
         $this->description = $booking->description;
     }
 
@@ -54,9 +54,8 @@ class AdminCricketComponent extends Component
             'email' => 'required|email',
             'address' => 'required|min:3',
             'fields_name' => 'required',
-            'booking_date' => 'required',
-            'booking_days' => 'required',
-            'booking_time' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
             'description' => 'required',
         ]);
 
@@ -68,9 +67,8 @@ class AdminCricketComponent extends Component
                 'email' => $this->email,
                 'address' => $this->address,
                 'fields_name' => $this->fields_name,
-                'booking_date' => $this->booking_date,
-                'booking_days' => $this->booking_days,
-                'booking_time' => $this->booking_time,
+                'start_date' => $this->start_date,
+                'end_date' => $this->end_date,
                 'description' => $this->description,
             ]);
             
@@ -89,9 +87,24 @@ class AdminCricketComponent extends Component
         }
     }
 
+
+    public function approved($id)
+    {
+        $booking = Booking::find($id);
+        if($booking->is_approved == false)
+        {
+            $booking->is_approved = true;
+            $booking->save();
+            $booking->notify(new AdminReply($booking));
+            session()->flash('success','Approved by admin');
+        }else{
+            session()->flash('success','Approved by admin');
+        }
+    }
+
     public function render()
     {
-        $booking = Booking::all();
+        $booking = Booking::latest()->get();
         return view('livewire.admin.pages.admin-cricket-component',['booking'=>$booking])->layout('layouts.master');
     }
 }

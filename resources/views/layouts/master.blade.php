@@ -24,6 +24,7 @@
   <link href="{{asset('frontend/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('frontend/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
   <link href="{{asset('frontend/css/line-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/sweet_alert/sweetalert2.min.css')}}" rel="stylesheet">
   
  
 
@@ -223,7 +224,7 @@
   <script src="{{asset('frontend/js/main.js')}}"></script>
   <script src="{{asset('frontend/js/file.js')}}"></script>
   <script src="{{asset('frontend/js/checkbox.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="{{asset('frontend/vendor/sweet_alert/sweetalert2.min.js')}}"></script>
 
 @livewireScripts
 <script>

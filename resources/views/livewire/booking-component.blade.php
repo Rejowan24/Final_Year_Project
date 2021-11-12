@@ -14,14 +14,14 @@
                                 </div>
                             @endif --}}
 
-                            {{-- @if(Session::has('success'))
+                            @if(Session::has('success'))
                             <script>
-                              swal("Great Job!","{!! Session::get('success') !!}","success",{
+                              swal("Submitted!","{!! Session::get('success') !!}","success",{
                                 button:"ok",
                               });
                             </script>
-                            @endif --}}
-                            <form wire:submit.prevent="submit">
+                            @endif
+                            <form wire:submit="submit">
                                 <div class="form-group">
                                     <h1 class="p-2 text-white">Booking Fields</h1>
                                 </div>
@@ -78,34 +78,25 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <span class="form-label">Booking Date</span>
-                                            <input class="form-control" type="date" wire:model="booking_date">
-                                            @error('booking_date')
+                                            <span class="form-label">Start Date</span>
+                                            <input class="form-control" type="date" wire:model="start_date">
+                                            @error('start_date')
                                             <span style="color:red;">{{$message}}</span>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <span class="form-label">Booking days</span>
-                                            <input class="form-control" type="text" wire:model="booking_days">
-                                            @error('booking_days')
+                                            <span class="form-label">End Date</span>
+                                            <input class="form-control" type="date" wire:model="end_date">
+                                            @error('end_date')
                                             <span style="color:red;">{{$message}}</span>
                                             @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <span class="form-label">Time</span>
-                                            <input class="form-control" type="time" wire:model="booking_time">
-                                            @error('booking_time')
-                                            <span style="color:red;">{{$message}}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <span class="form-label">Book For.</span>
                                             <input class="form-control" type="text" placeholder="Please write some description" wire:model="description">

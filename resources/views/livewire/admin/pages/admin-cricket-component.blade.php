@@ -11,6 +11,14 @@
                         @if (session()->has('message'))
                             <div class="alert alert-success">{{ session('message') }}</div>
                         @endif
+
+                        @if(Session::has('success'))
+                        <script>
+                            swal("Approved!","{!! Session::get('success') !!}","success",{
+                              button:"ok",
+                            });
+                          </script>
+                        @endif
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -19,10 +27,12 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Address</th>
                                     <th scope="col">Fields Name</th>
-                                    <th scope="col">Booking Date</th>
-                                    <th scope="col">Booking Days</th>
-                                    <th scope="col">Booking Time</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Time</th>
                                     <th scope="col">Description</th>
+                                    <th scope="col">Is_Approve</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -34,10 +44,24 @@
                                         <td>{{ $bookitem->email }}</td>
                                         <td>{{ $bookitem->address }}</td>
                                         <td>{{ $bookitem->fields_name }}</td>
-                                        <td>{{ $bookitem->booking_date }}</td>
-                                        <td>{{ $bookitem->booking_days }}</td>
+                                        <td>{{ $bookitem->start_date }}</td>
+                                        <td>{{ $bookitem->end_date }}</td>
                                         <td>{{ $bookitem->created_at->diffForHumans() }}</td>
                                         <td>{{ $bookitem->description }}</td>
+                                        <td>
+                                            @if ($bookitem->is_approved == true)
+                                                <span class="bg-primary p-1 text-white">Approved</span>
+                                            @else
+                                                <span class="bg-danger p-1 text-white">Pending</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($bookitem->is_approved == true)
+                                                <span class="bg-primary p-1 text-white">Booked</span>
+                                            @else
+                                                <span class="bg-danger p-1 text-white">Pending</span>
+                                            @endif
+                                        </td>
 
                                         <td>
                                             <button type="button" class="btn btn-success btn-sm m-1"
@@ -47,6 +71,18 @@
                                             <button type="button" class="btn btn-danger btn-sm m-1"
                                                 wire:click.prevent="delete({{ $bookitem->id }})"><i
                                                     class="lar la-trash-alt"></i></button>
+
+                                            @if ($bookitem->is_approved == false)
+
+                                                    <a class="btn btn-primary btn-sm" wire:click.prevent="approved({{ $bookitem->id }})">
+                                                        <span>Approved</span>
+                                                    </a>
+                                            @else
+                                                    <a href="#" class="btn btn-secondary btn-sm disabled">
+                                                        <span>Approved</span>
+                                                    </a>
+
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

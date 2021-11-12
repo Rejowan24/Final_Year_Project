@@ -41,6 +41,12 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
+
+    public function bookings()
+    {
+        return $this->hasMany('App\Models\Booking');
+    }
+
     /**
      * The attributes that should be cast.
      *

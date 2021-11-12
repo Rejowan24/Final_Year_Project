@@ -29,7 +29,7 @@
                    <li class="submenu">
                      <a href="{{url('admin/cricket')}}">
                       <i class="las la-baseball-ball"></i>
-                         <span> Cricket </span>
+                         <span> Booking List </span>
                      </a>
                  </li>
  

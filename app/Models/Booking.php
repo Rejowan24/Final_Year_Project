@@ -9,5 +9,11 @@ class Booking extends Model
 {
     use HasFactory;
     protected $table = "bookings";
-    protected $fillable = ['name','email','address','fields_name','booking_date','booking_days','booking_time','description'];
+    protected $fillable = ['user_id','name','email','address','fields_name','start_date','end_date','description'];
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

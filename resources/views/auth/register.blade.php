@@ -75,11 +75,11 @@
                     @csrf
                     <div class="form-group p-2">
                       <label for="exampleInputEmail1">Name</label>
-                      <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email":value="'name" required autofocus>
+                      <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name"  value="{{old('name')}}" required autofocus>
                     </div>
                     <div class="form-group p-2">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email":value="email" required autofocus>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" value="{{old('email')}}" required autofocus>
                       </div>
                     <div class="form-group p-2">
                       <label for="exampleInputPassword1">Password</label>

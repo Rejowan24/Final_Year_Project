@@ -53,6 +53,7 @@ Route::get('/', HomeComponent::class);
 Route::get('/about', AboutComponent::class);
 Route::get('/contact', ContactComponent::class);
 Route::get('/book/items', BookitemsComponent::class);
+Route::get('/download/file/{id}', BookitemsComponent::class)->name('download.pdf');
 Route::get('/route', RouteComponent::class);
 Route::get('/schedule', ScheduleComponent::class);
 Route::get('/driver/list', DriverlistComponent::class);
@@ -92,8 +93,13 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
     Route::get('/admin/edit/category{category_slug}', AdminEditCategoryComponent::class)->name('admin.editcategory');
     Route::get('admin/product/add', AdminAddProductComponent::class )->name('admin.addproduct');
     Route::get('admin/product/edit/{product_slug}', AdminEditProductComponent::class )->name('admin.editproduct');
+    
+
 
     // all pages here...
     Route::get('admin/cricket', AdminCricketComponent::class);
     Route::get('admin/bookitems', AdminBooksItemsComponent::class);
+
+    Route::get('/booking/pending', AdminCricketComponent::class)->name('booking.pending');
+    Route::put('/booking/approve/{id}', AdminCricketComponent::class)->name('booking.approve');
 });
