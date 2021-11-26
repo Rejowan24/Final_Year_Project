@@ -39,26 +39,10 @@
 
 <body> 
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <nav  class="nav">
-        <ul>
-          <li><a href="/" class="{{request()->is('/') ? 'active':''}}">Home</a></li>
-          <li><a href="/about"  class="{{request()->is('about') ? 'active':''}}">About</a></li>
-          <li><a href="/contact"  class="{{request()->is('contact') ? 'active':''}}">Contact</a></li>
-        </ul>
-      </nav>
 
-      <div class="contact-info d-none d-md-block">
-        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">daffodilvarsity.edu.bd</a>
-        <i class="bi bi-phone-fill phone-icon"></i>	01811-458850
-      </div>
-    </div>
-  </section>
   
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center fixed-top">
+  <header id="header" class="d-flex align-items-center fixed-top py-5" style="margin-top: 0px;">
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
@@ -108,8 +92,6 @@
               </ul>   
             </ul>
           </li>
-
-
         </ul>
           <div class="authentication">
             @if(Route::has('login'))
@@ -172,45 +154,6 @@
 
   {{$slot}}
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row d-flex justify-content-between">
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Library</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Playground</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Visiting Car</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Greenland</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Bonomaya</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Food Court</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h3 class="text-white">contact us</h3>
-            <p>
-             Daffodil International University<br>
-              Ashulia server dhaka<br><br>
-              <strong>Phone:</strong>01811-458850<br>
-              <strong>Email:</strong> diljeb@daffodilvarsity.edu.bd<br>
-            </p>
-          </div>
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -232,20 +175,35 @@
  
 
 
-@livewireScripts
+
+  @livewireScripts
+  <script>
+    $(document).ready(function() {
+      $('#datatablesSimple').DataTable();
+    } );
+  </script>
+  <script>
+    window.livewire.on('bookingadded',()=>{
+      $('#addBookingModel').modal('hide');
+    });
+  </script>
+  <script>
+    window.livewire.on('bookingUpdated',()=>{
+      $('#updateBookingModel').modal('hide');
+    });
+  </script>
+
+
+{{-- for driverlist ... --}}
 <script>
-  $(document).ready(function() {
-    $('#datatablesSimple').DataTable();
-  } );
-</script>
-<script>
-  window.livewire.on('bookingAdded',()=>{
-    $('#addBookingModel').modal('hide');
+  window.livewire.on('DriverAdded',()=>{
+    $('#addDriverModel').modal('hide');
   });
 </script>
+
 <script>
-  window.livewire.on('bookingUpdated',()=>{
-    $('#updateBookingModel').modal('hide');
+  window.livewire.on('DriverUpdated',()=>{
+    $('#UpdateDriverModel').modal('hide');
   });
 </script>
 

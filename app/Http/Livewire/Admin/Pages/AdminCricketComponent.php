@@ -34,6 +34,24 @@ class AdminCricketComponent extends Component
         $this->description = '';
     }
 
+    public function store()
+    {
+        $validateData = $this->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+            'address' => 'required|min:3',
+            'fields_name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'description' => 'required',
+        ]);
+
+        Booking::create($validateData);
+        session()->flash('message','Booking Added Successfully');
+        $this->resetInputFields();
+        $this->emit('bookingadded');
+    }
+
     public function edit($id)
     {
         $booking = Booking::where('id',$id)->first();
@@ -95,16 +113,16 @@ class AdminCricketComponent extends Component
         {
             $booking->is_approved = true;
             $booking->save();
-            $booking->notify(new AdminReply($booking));
+            $booking->user->notify(new AdminReply($booking));
             session()->flash('success','Approved by admin');
         }else{
-            session()->flash('success','Approved by admin');
+            session()->flash('success','Already Approved by admin');
         }
     }
 
     public function render()
     {
         $booking = Booking::latest()->get();
-        return view('livewire.admin.pages.admin-cricket-component',['booking'=>$booking])->layout('layouts.master');
+        return view('livewire.admin.pages.admin-cricket-component',['booking'=>$booking])->layout('layouts.admin_index');
     }
 }

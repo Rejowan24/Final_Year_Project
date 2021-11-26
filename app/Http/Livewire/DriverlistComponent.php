@@ -3,11 +3,15 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Driver_list;
 
 class DriverlistComponent extends Component
 {
+
+    
     public function render()
     {
-        return view('livewire.driverlist-component')->layout('layouts.master');
+        $driverlist = Driver_list::all();
+        return view('livewire.driverlist-component', compact('driverlist'))->layout('layouts.master');
     }
 }

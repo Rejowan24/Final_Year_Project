@@ -48,9 +48,7 @@ class SlotBookingComponent extends Component
 
         $timestampst = strtotime($this->start_date);
         $timestampend = strtotime($this->end_date);
-        // $add = strtotime("+7 day", $timestampst);
-        // $main = date('d-m-y', $add);
-        // dd($main);
+
         $st_date = date('d-m-y',$timestampst);
         $end_date = date('d-m-y',$timestampend);
 

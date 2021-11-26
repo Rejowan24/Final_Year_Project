@@ -1,5 +1,6 @@
 <div>
-    @include('livewire.admin.edit');
+    @include('livewire.admin.fields_edit');
+    @include('livewire.admin.fields_create');
     @extends('livewire.admin.admin-master-dashboard-component');
 
 
@@ -19,6 +20,8 @@
                             });
                           </script>
                         @endif
+                        <button type="button" class="btn btn-success btn-sm m-1"
+                        data-bs-toggle="modal" data-bs-target="#addBookingModel">Add</button>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

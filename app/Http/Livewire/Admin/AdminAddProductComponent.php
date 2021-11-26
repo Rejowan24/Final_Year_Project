@@ -41,6 +41,6 @@ class AdminAddProductComponent extends Component
     {
 
         $categories = Category::all();
-        return view('livewire.admin.admin-add-product-component',['categories'=>$categories])->layout('layouts.master');
+        return view('livewire.admin.admin-add-product-component',['categories'=>$categories])->layout('layouts.admin_index');
     }
 }

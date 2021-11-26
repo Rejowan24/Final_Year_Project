@@ -11,7 +11,7 @@ use App\Http\Livewire\BookingComponent;
 use App\Http\Livewire\RouteComponent;
 use App\Http\Livewire\ScheduleComponent;
 use App\Http\Livewire\DriverlistComponent;
-use App\Http\Livewire\VisitingcarComponent;
+
 use App\Http\Livewire\FoodcourtComponent;
 use App\Http\Livewire\GreengardenComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -25,6 +25,7 @@ use App\Http\Livewire\ExplorelabComponent;
 use App\Http\Livewire\VisitPermissionComponent;
 use App\Http\Livewire\SlotBookingComponent;
 use App\Http\Livewire\SlotListComponent;
+use App\Http\Livewire\BookingListComponent;
 use App\Http\Livewire\user\UserDashboardComponent;
 use App\Http\Livewire\admin\AdminDashboardComponent;
 use App\Http\Livewire\admin\AdminAddCategoryComponent;
@@ -33,6 +34,7 @@ use App\Http\Livewire\admin\AdminAddProductComponent;
 use App\Http\Livewire\admin\AdminEditProductComponent;
 use App\Http\Livewire\admin\pages\AdminCricketComponent;
 use App\Http\Livewire\admin\pages\AdminBooksItemsComponent;
+use App\Http\Livewire\admin\pages\AdminDriverlistComponent;
 
 
 /*
@@ -57,7 +59,6 @@ Route::get('/download/file/{id}', BookitemsComponent::class)->name('download.pdf
 Route::get('/route', RouteComponent::class);
 Route::get('/schedule', ScheduleComponent::class);
 Route::get('/driver/list', DriverlistComponent::class);
-Route::get('/visiting/car', VisitingcarComponent::class);
 Route::get('/food/court', FoodcourtComponent::class);
 Route::get('/green/garden', GreengardenComponent::class);
 Route::get('/cricket/football', CricketComponent::class);
@@ -69,7 +70,7 @@ Route::get('/auditorium', AuditoriumComponent::class);
 
 Route::get('/explore/lab', ExplorelabComponent::class);
 Route::get('/visiting/permission', VisitPermissionComponent::class);
-Route::get('/booking', BookingComponent::class);
+
 Route::get('/slot/booking', SlotBookingComponent::class)->name('slot.booking');
 Route::get('/slot/list/checking', SlotListComponent::class)->name('slot.list');
 
@@ -83,6 +84,8 @@ Route::get('/book/category/{category_slug}', CategoryComponent::class)->name('bo
 // for user
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class )->name('user.dashboard');
+    Route::get('/booking', BookingComponent::class);
+    Route::get('/show/booking/list', BookingListComponent::class)->name('show.list');
 });
 
 
@@ -99,7 +102,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
     // all pages here...
     Route::get('admin/cricket', AdminCricketComponent::class);
     Route::get('admin/bookitems', AdminBooksItemsComponent::class);
-
+    Route::get('admin/driverlist', AdminDriverlistComponent::class)->name('admin.driverlist');
     Route::get('/booking/pending', AdminCricketComponent::class)->name('booking.pending');
     Route::put('/booking/approve/{id}', AdminCricketComponent::class)->name('booking.approve');
 });

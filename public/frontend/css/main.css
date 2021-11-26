@@ -3640,7 +3640,7 @@ a.next-link:hover {
 .authentication {
     position: absolute;
     top: -28;
-    right: 0;
+    right: -5;
     padding: 10px;
 }
 
@@ -4138,5 +4138,13 @@ body.adminbody .main-sidebar.left {
 
 .animation {
     visibility: visible;
+    transition: 6s ease;
+}
+
+
+/* booking fields customization */
+
+.addfields {
+    display: none;
     transition: 6s ease;
 }

@@ -25,13 +25,20 @@
                            <span> BookItems </span>
                        </a>
                    </li>
+
+                   <li class="submenu">
+                    <a href="{{route('admin.driverlist')}}">
+                        <i class="las la-book"></i>
+                        <span> Driver List </span>
+                    </a>
+                </li>
  
                    <li class="submenu">
                      <a href="{{url('admin/cricket')}}">
                       <i class="las la-baseball-ball"></i>
                          <span> Booking List </span>
                      </a>
-                 </li>
+                   </li>
  
                <div class="clearfix"></div>
  
@@ -43,7 +50,7 @@
  
    </div>
  
- <div class="main-container-box top-navbar">
+ <div class="overflow-hidden main-container-box top-navbar">
      <div class="container container-box">
        <nav class="navbar navbar-expand-lg navbar-light bg-light p-4 shadow rounded sub-menu">
          <div class="btn-area">

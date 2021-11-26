@@ -23,10 +23,14 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'email',
         'password',
+        'current_team_id',
+        'profile_photo_path',
+        'utype'
     ];
 
     /**
@@ -42,9 +46,9 @@ class User extends Authenticatable
     ];
 
 
-    public function bookings()
+    public function booking()
     {
-        return $this->hasMany('App\Models\Booking');
+        return $this->hasMany(Booking::class);
     }
 
     /**

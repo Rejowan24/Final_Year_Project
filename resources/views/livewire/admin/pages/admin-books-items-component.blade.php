@@ -40,7 +40,7 @@
                             <div class="col">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
-                                        <li class="page-item">{{ $products->links('layouts.pagination') }}</li>
+                                       
                                     </ul>
                                 </nav>
                             </div>
@@ -99,7 +99,7 @@
                                 <div class="col">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination">
-                                            <li class="page-item">{{ $products->links('layouts.pagination') }}
+                                            
                                             </li>
                                         </ul>
                                     </nav>

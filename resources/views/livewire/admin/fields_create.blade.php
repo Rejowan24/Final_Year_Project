@@ -9,7 +9,6 @@
         </div>
         <div class="modal-body">
             <form>
-                <input type="hidden" name="id" wire:model.defer="ids">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" class="form-control" wire:model.defer="name">

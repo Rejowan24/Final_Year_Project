@@ -31,8 +31,8 @@ class AdminBooksItemsComponent extends Component
     public function render()
     {
 
-        $categories = Category::paginate(5);
-        $products = Product::paginate(5);
-        return view('livewire.admin.pages.admin-books-items-component',['categories'=>$categories,'products'=>$products])->layout('layouts.master');
+        $categories = Category::all();
+        $products = Product::all();
+        return view('livewire.admin.pages.admin-books-items-component',['categories'=>$categories,'products'=>$products])->layout('layouts.admin_index');
     }
 }

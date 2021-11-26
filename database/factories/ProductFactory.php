@@ -27,9 +27,9 @@ class ProductFactory extends Factory
         return [
             'name'=> $product_name,
             'slug'=> $slug,
-            'short_description'=> $this->faker->text(200),
+            'short_description'=> $this->faker->text(10),
             'image'=> 'book-'. $this->faker->unique()->numberBetween(1,22).'.jpg',
-            'category_id'=> $this->faker->numberBetween(1,5)
+            'category_id'=> $this->faker->numberBetween(1,5),
         ];
     }
 }
