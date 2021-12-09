@@ -23,7 +23,7 @@
                             </script>
                             @endif --}}
                             <form>
-                                <input type="hidden" readonly  value="{{Auth::user()->id}}">
+                                <input type="hidden" readonly  value="{{Auth::user()->idphp}}">
                                 <div class="form-group">
                                     <h1 class="p-2 text-white">Booking Fields</h1>
                                 </div>

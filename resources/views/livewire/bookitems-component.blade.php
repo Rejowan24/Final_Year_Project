@@ -20,10 +20,18 @@
             <h1 class="display-8 mb-4 p-4 bg-color text-center">All Books.</h1>
             <div class="row mb-5">
                 <div class="col-md-4 col-sm-4">
-                    <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
+                    {{-- <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
                         <option selected>Categories</option>
                         @foreach ($categories as $category)
                             <option value="{{ route('book.category', ['category_slug' => $category->slug]) }}">
+                                {{ $category->name }}</option>
+                        @endforeach
+                    </select> --}}
+
+                    <select class="form-select" aria-label="Default select example" wire:model="ctg">
+                        <option  wire:click="allCtg">All Books</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">
                                 {{ $category->name }}</option>
                         @endforeach
                     </select>
@@ -33,10 +41,9 @@
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                             wire:model="searchTerm">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        {{-- <button class="btn btn-outline-success" type="submit">Search</button> --}}
                     </form>
                 </div>
-
             </div>
             </section>
 
@@ -55,7 +62,7 @@
                                         <div class="Books-more">
                                             <p class="">{{ $product->short_description }}</p>
                                         </div>
-                                         <a href="{{route('slot.booking')}}" class="btn books-btn btn-sm">Book Now</a>
+                                         {{-- <a href="{{route('slot.booking')}}" class="btn books-btn btn-sm">Book Now</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +70,6 @@
                     </div>
                 @endforeach
             </div>
-
 
             <div class="container-fluid" style="margin-left: -26px;">
                 <div class="row">

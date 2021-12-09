@@ -778,9 +778,15 @@
     background-color: #fff;
     display: flex;
     width: 18rem;
-    height: 13rem;
+    height: 13.3rem;
     text-align: center;
     margin-left: 18px;
+    /* border: 2px solid red; */
+}
+
+.Books:hover {
+    transition: 0.3s ease;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 

@@ -14,7 +14,6 @@ use App\Http\Livewire\DriverlistComponent;
 
 use App\Http\Livewire\FoodcourtComponent;
 use App\Http\Livewire\GreengardenComponent;
-use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CricketComponent;
 use App\Http\Livewire\VolleyballComponent;
 use App\Http\Livewire\GolfComponent;
@@ -73,11 +72,6 @@ Route::get('/visiting/permission', VisitPermissionComponent::class);
 
 Route::get('/slot/booking', SlotBookingComponent::class)->name('slot.booking');
 Route::get('/slot/list/checking', SlotListComponent::class)->name('slot.list');
-
-
-// for category 
-
-Route::get('/book/category/{category_slug}', CategoryComponent::class)->name('book.category');
 
 
 
