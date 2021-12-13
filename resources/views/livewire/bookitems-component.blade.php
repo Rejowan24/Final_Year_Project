@@ -20,14 +20,6 @@
             <h1 class="display-8 mb-4 p-4 bg-color text-center">All Books.</h1>
             <div class="row mb-5">
                 <div class="col-md-4 col-sm-4">
-                    {{-- <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
-                        <option selected>Categories</option>
-                        @foreach ($categories as $category)
-                            <option value="{{ route('book.category', ['category_slug' => $category->slug]) }}">
-                                {{ $category->name }}</option>
-                        @endforeach
-                    </select> --}}
-
                     <select class="form-select" aria-label="Default select example" wire:model="ctg">
                         <option  wire:click="allCtg">All Books</option>
                         @foreach ($categories as $category)

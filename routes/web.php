@@ -15,7 +15,7 @@ use App\Http\Livewire\DriverlistComponent;
 use App\Http\Livewire\FoodcourtComponent;
 use App\Http\Livewire\GreengardenComponent;
 use App\Http\Livewire\CricketComponent;
-use App\Http\Livewire\VolleyballComponent;
+use App\Http\Livewire\BasketballComponent;
 use App\Http\Livewire\GolfComponent;
 use App\Http\Livewire\BonomayaComponent;
 use App\Http\Livewire\AnisulhaqComponent;
@@ -61,7 +61,7 @@ Route::get('/driver/list', DriverlistComponent::class);
 Route::get('/food/court', FoodcourtComponent::class);
 Route::get('/green/garden', GreengardenComponent::class);
 Route::get('/cricket/football', CricketComponent::class);
-Route::get('/basketball', VolleyballComponent::class);
+Route::get('/basketball', BasketballComponent::class);
 Route::get('/golf', GolfComponent::class);
 Route::get('/bonomaya', BonomayaComponent::class);
 Route::get('/anisulhaq', AnisulhaqComponent::class);
@@ -72,7 +72,7 @@ Route::get('/visiting/permission', VisitPermissionComponent::class);
 
 Route::get('/slot/booking', SlotBookingComponent::class)->name('slot.booking');
 Route::get('/slot/list/checking', SlotListComponent::class)->name('slot.list');
-
+Route::get('/table/reserve', App\Http\livewire\TableReserveComponent::class)->name('table.reserve');
 
 
 // for user

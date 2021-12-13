@@ -1314,7 +1314,7 @@
 /* Menu Section */
 
 .popular-dishes-area {
-    background-color: #FFFBF2;
+    /* background-color: #FFFBF2; */
     position: relative;
 }
 
@@ -1426,7 +1426,7 @@
 
 .single-dishes {
     border: 1px solid #e6e6e6;
-    padding: 20px;
+    /* padding: 20px; */
     position: relative;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
@@ -1454,52 +1454,44 @@
 }
 
 .single-dishes .dish-img {
-    width: 140px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .single-dishes .dish-img img {
+    height: 12rem;
     width: 100%;
     text-align: center;
     margin: 0 auto;
 }
 
-.single-dishes .dish-content h5 {
-    padding: 20px 0;
+.single-dishes .dish-content {
+    padding: 20px;
 }
 
-.single-dishes .dish-content h5 a {
+.single-dishes .dish-content h6 {
+    padding: 20px 0;
+    font-size: 18px;
+}
+
+.single-dishes .dish-content .food-des {
+    font-size: 15px;
+}
+
+.single-dishes .dish-content h6 a {
     color: #2a435d;
 }
 
-.single-dishes .dish-content h5 a:hover {
+.single-dishes .dish-content h6 a:hover {
     color: #cc3333;
 }
 
 .single-dishes .dish-content .price {
-    font-weight: 700;
+    font-weight: 600;
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     color: #2a435d;
     text-transform: capitalize;
-}
-
-.single-dishes .dish-content .rating {
-    font-weight: 700;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    color: #2a435d;
-    text-transform: capitalize;
-}
-
-.single-dishes .badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #2a435d;
-    color: #ffffff;
-    padding: 5px 10px;
-    text-transform: uppercase;
 }
 
 .single-dishes .badge-bg-color {
@@ -1508,6 +1500,21 @@
 
 .single-dishes .badge-color {
     color: #cc3333 !important;
+}
+
+.side-btn {
+    width: 50%;
+    border: 1px solid grey;
+    padding: 15px;
+    margin-right: -10px;
+    margin-top: -60px;
+    background: #dfe6e9;
+    text-align: right;
+}
+
+.side-btn a {
+    padding: 6px;
+    border-radius: 5px;
 }
 
 
@@ -1532,12 +1539,23 @@
 }
 
 .food-heading {
-    margin-top: -6rem;
-    padding: 6rem;
+    margin-top: 2rem;
+    padding: 4rem;
+}
+
+.card-heading {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 2rem;
+    color: black;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 .food-heading h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 .services-area {
@@ -1643,18 +1661,19 @@ h6:last-child {
 
 .section-title {
     margin-bottom: 45px;
-    text-align: center
+    text-align: center;
 }
 
 .section-title h2 {
     font-size: 45px;
     margin-bottom: 16px;
-    line-height: 1
+    line-height: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .section-title p {
     max-width: 550px;
-    margin: auto
+    margin: auto;
 }
 
 .services-item {
