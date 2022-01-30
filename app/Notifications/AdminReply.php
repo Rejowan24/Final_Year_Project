@@ -44,9 +44,10 @@ class AdminReply extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                     
+                        ->greeting('Hellow'.' '.$this->booking->user->name)
                         ->subject('Booking approve by Admin')
-                        ->line('To Confirm booking download the pdf file.')
+                        ->line('Your Booking request has been approved.')
+                        ->line('Download the receipt pdf from the below link.')
                         ->line('Click here to download')
                         ->action('Notification Action', url(route('download.pdf', $this->booking->id)))
                         ->line('Thank you for using our application!');

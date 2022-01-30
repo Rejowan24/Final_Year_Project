@@ -22,7 +22,9 @@
                         <div class="row">
                             <div class="col">
                                 <h1>Golf Field</h1>
-                                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.</p>
+                                <p>Golf is a popular game all over the world, often played by the rich and famous. Some people have even taken up golf as their career.
+
+                                    The management of DIU is always conscious of the physical fitness of members of its family & helps to do this by providing world class facilities. The golf course is furnished with valuable information & guidance (such as: safety measures and norms, etiquette, attire, etc.). A well-equipped golf restaurant has also been inaugurated to ensure well-balanced facilities.</p>
                             </div>
                         </div>
                     </div>
@@ -44,5 +46,10 @@
         </div>
     </div>
 
+    {{-- <div class="container">
+        @foreach ($message as $item)
+            <h1>{{$item->message}}</h1>
+        @endforeach
+    </div> --}}
 </div>
 

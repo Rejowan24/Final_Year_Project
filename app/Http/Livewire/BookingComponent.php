@@ -56,46 +56,48 @@ class BookingComponent extends Component
         $booking->rpname = $this->rpname;
         $booking->rpemail = $this->rpemail;
         $booking->description = $this->description;
-        $booking->save($this->validate());
-        session()->flash('success','submitted successfull');
-        $this->resetInputFields();
-        $booking = Booking::latest()->first();
-        $admin = User::where('id','1')->get();
-        Notification::send($admin, new BookingRequest($booking)); 
+        // $booking->save($this->validate());
+    
+        // session()->flash('success','submitted successfull');
+        // $this->resetInputFields();
+        // $booking = Booking::latest()->first();
+        // $admin = User::where('id','1')->get();
+        // Notification::send($admin, new BookingRequest($booking)); 
 
-        // $start_date = Booking::oldest()->pluck('start_date')->first();
-        // $end_date = Booking::latest()->pluck('end_date')->first();
+        $start_date = Booking::oldest()->pluck('start_date')->first();
+        $end_date = Booking::latest()->pluck('end_date')->first();
 
-        // $period = CarbonPeriod::create($start_date, $end_date);
-        // foreach ($period as $date) {
-        //   // Insert Dates into listOfDates Array
-        //   $listOfDates[] = $date->format('d-m-y');
+        $period = CarbonPeriod::create($start_date, $end_date);
+        foreach ($period as $date) {
+          // Insert Dates into listOfDates Array
+          $listOfDates[] = $date->format('d-m-y');
            
-        // }
+        }
 
-        // //   // convert the date on unix timestamps(user input date)
-        // $timestampst = strtotime($this->start_date);
-        // $timestampend = strtotime($this->end_date);
+        // convert the date on unix timestamps(user input date)
+        $timestampst = strtotime($this->start_date);
+        $timestampend = strtotime($this->end_date);
+        // convert the unix timestamps to date
+        $st_date = date('d-m-y',$timestampst);
+        $end_date = date('d-m-y',$timestampend);
 
-        //  // convert the unix timestamps to date
-        // $st_date = date('d-m-y',$timestampst);
-        // $end_date = date('d-m-y',$timestampend);
-
-        // // check the date on database
-        // $datefirst = collect($listOfDates)->contains($st_date);
-        // $datelast = collect($listOfDates)->contains($end_date);
+        // check the date on database
+        $datefirst = collect($listOfDates)->contains($st_date);
+        $datelast = collect($listOfDates)->contains($end_date);
 
           
-        // if($datefirst == true || $datelast == true){
-        //     session()->flash('success','This Date is already Booked');
-        // }else{
+        
+        if($datefirst == true || $datelast == true){
+            session()->flash('success','This Date is already Booked');
+        }else{
    
-        //     Booking::create($booking);
-        //     // $booking = Booking::latest()->first();
-        //     // $users = User::where('id','1')->get();
-        //     // Notification::send($users, new BookingRequest($booking));    
-        //     session()->flash('success','submitted successfull');
-        // }
+            $booking->save($this->validate());
+            $booking = Booking::latest()->first();
+            $users = User::where('id','1')->get();
+            Notification::send($users, new BookingRequest($booking)); 
+            $this->resetInputFields();
+            session()->flash('success','submitted successfull');
+        }
         
     }
 
@@ -109,53 +111,53 @@ class BookingComponent extends Component
     public function download($id)
     {
      
-        $data = Booking::where('id',$id)->get();
-        dd($data);
+        $data = Booking::where('id',$id)->first();
+        // dd($data);
      
-     if($booking->fields_name === 'Cricket & Football')
+     if($data->fields_name === 'Cricket & Football')
         {   
            
-           $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
+           $pdf = PDF::loadView('PDF.pdf',['booking'=>$data])->output();
            return response()->streamDownload(
             fn () => print($pdf),
             "Cricket_Football_fields.pdf"
        );
 
    
-        }elseif($booking->fields_name === 'Basket ball'){
+        }elseif($data->fields_name === 'Basket ball'){
            
-            $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
+            $pdf = PDF::loadView('PDF.pdf',['booking'=>$data])->output();
             return response()->streamDownload(
              fn () => print($pdf),
              "Basketball_fields.pdf"
         );
 
             
-        }elseif($booking->fields_name === 'Golf'){
+        }elseif($data->fields_name === 'Golf'){
 
-           $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
+           $pdf = PDF::loadView('PDF.pdf',['booking'=>$data])->output();
            return response()->streamDownload(
             fn () => print($pdf),
             "Golf.pdf"
            );
+                
        
-       
-        }elseif($booking->fields_name === 'Bonomaya'){
-           $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
+        }elseif($data->fields_name === 'Bonomaya'){
+           $pdf = PDF::loadView('PDF.pdf',['booking'=>$data])->output();
            return response()->streamDownload(
             fn () => print($pdf),
             "Bonomaya.pdf"
        );
 
-        }elseif($booking->fields_name === 'Anisul Haq Study Center'){
-           $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
+        }elseif($data->fields_name === 'Anisul Haq Study Center'){
+           $pdf = PDF::loadView('PDF.pdf',['booking'=>$data])->output();
            return response()->streamDownload(
             fn () => print($pdf),
             "Anisul_Haq.pdf"
        );
 
-        }elseif($booking->fields_name === 'Auditorium'){
-           $pdf = PDF::loadView('PDF.pdf',['booking'=>$booking])->output();
+        }elseif($data->fields_name === 'Auditorium'){
+           $pdf = PDF::loadView('PDF.pdf',['booking'=>$data])->output();
            return response()->streamDownload(
             fn () => print($pdf),
             "Auditorium.pdf"
@@ -165,6 +167,12 @@ class BookingComponent extends Component
             return back()->with('Invalid');
         }
     }
+
+
+    // public function testing()
+    // {
+    //     dd('this is me ... and i know what i am doing and what is my responsibility....');
+    // }
 
 
     public function render()

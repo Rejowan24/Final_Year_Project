@@ -60,6 +60,11 @@ class AdminDriverlistComponent extends Component
         $this->title = $driverlist->title;
         $this->number = $driverlist->number;
         $this->information = $driverlist->information;
+        if($this->image)
+        {
+            $image = time() . '-' . $this->name . '.' . $this->image->extension();
+            $validateData['image'] = $this->image->storeAs('driver',$image);
+        }
     }
 
     public function UpdateDriverList()
@@ -79,6 +84,7 @@ class AdminDriverlistComponent extends Component
                 'title' => $this->title,
                 'number' => $this->number,
                 'information' => $this->information,
+                'image' => $this->image,
             ]);
             
            session()->flash('message','Driver updated Successfully');

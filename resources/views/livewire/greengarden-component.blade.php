@@ -21,7 +21,7 @@
                             <img src="{{asset('frontend/img/green-garden/breakfast.jpg')}}" alt="..." class="img-thumbnail">
                         </div>
                         <h3>Breakfast</h3>
-                        <p>There are many types of breakfast available here.</p>
+                        {{-- <p>There are many types of breakfast available here.</p> --}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -30,7 +30,7 @@
                             <img src="{{asset('frontend/img/green-garden/lunch.jpg')}}" alt="..." class="img-thumbnail">
                         </div>
                         <h3>Lunch</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -39,7 +39,7 @@
                             <img src="{{asset('frontend/img/green-garden/dinner.jpg')}}" alt="..." class="img-thumbnail">
                         </div>
                         <h3>Dinner</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p> --}}
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                             <div class="single-dishes">
                                 <div class="dish-img">
                                {{-- <img src="{{asset('frontend/img/menu-item/pd1.png')}}" style="width: inherit;" alt=""> --}}
-                                    <img src="{{$food->image}}"  alt="">
+                                    <img src="{{ asset('backend/ImageStore').'/'.$food->image }}"  alt="">
                                 </div>
                                 <div class="dish-content">
                                     <h6><a href="single-dish.html">{{$food->name}}</a></h6>

@@ -23,8 +23,8 @@
                   <input type="text" name="number" class="form-control"  wire:model.defer="number">
               </div>
               <div class="form-group">
-                <label for="image">Information</label>
-                <input type="text" name="image" class="form-control"  wire:model.defer="image">
+                <label for="image">Image</label>
+                <input type="file" name="image" class="form-control"  wire:model.defer="image">
                 @if ($image)
                 <img src="{{$image->temporaryUrl()}}" width="120"/>
                 @endif

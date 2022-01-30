@@ -46,11 +46,9 @@ class BookingRequest extends Notification
         return (new MailMessage)
                     ->greeting('Hellow', 'Admin')
                     ->subject('Booking approve needed')
-                    ->line('New Booking Request by'. $this->booking->name. ' need to approve')
+                    ->line('New Booking Request by'.' '. $this->booking->name. ' need to approve')
                     ->line('To approve the booking click view button')
-                    ->line('Booking fields Name:'. $this->booking->fields_name)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url(''))
+                    ->line('Booking fields Name:'.''. $this->booking->fields_name)
                     ->line('Thank you for using our application!');
     }
 

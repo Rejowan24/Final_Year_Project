@@ -166,6 +166,7 @@
 
     <!-- Template Main JS File -->
   <script src="{{asset('frontend/js/main.js')}}"></script>
+  <script src="{{asset('frontend/js/subdropdown.js')}}"></script>
   <script src="{{asset('frontend/js/file.js')}}"></script>
   <script src="{{asset('frontend/js/checkbox.js')}}"></script>
   <script src="{{asset('frontend/vendor/sweet_alert/sweetalert2.min.js')}}"></script>

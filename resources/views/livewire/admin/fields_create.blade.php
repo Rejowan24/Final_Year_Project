@@ -18,8 +18,8 @@
                   <input type="email" name="email" class="form-control"  wire:model.defer="email">
               </div>
               <div class="form-group">
-                  <label for="address">Address</label>
-                  <input type="text" name="address" class="form-control"  wire:model.defer="address">
+                  <label for="phone">Phone</label>
+                  <input type="text" name="phone" class="form-control"  wire:model.defer="phone">
               </div>
               <div class="form-group">
                   <label for="fieldsname">Fields Name</label>

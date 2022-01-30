@@ -16,7 +16,7 @@
             <div class="col-md-8"><img src="{{asset('frontend/img/page/anisulhaq-3.jpg')}}" alt="..." class="img-thumbnail"></div>
             <div class="col-md-4 text-center" style="margin-top: 9rem;">
                 <h1>Anisul Haque</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sint facilis vitae dicta doloremque dolorem quod laboriosam sequi! Nisi quam sed natus in quas error cum mollitia deleniti quo consequuntur.</p>
+                <p>Daffodil International University is a private university located in Dhaka, Bangladesh. The original campus is located at Dhanmondi and the permanent campus is located in Daffodil Smart City.</p>
             </div>
         </div>
 

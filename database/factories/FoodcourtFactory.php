@@ -24,7 +24,7 @@ class FoodcourtFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'short_description' => $this->faker->text(30),
-            'image' => 'https://source.unsplash.com/random',
+            'image' => 'food_'.$this->faker->unique()->numberBetween(1,30),
             'price' => $this->faker->numberBetween(100,500),
         ];
     }

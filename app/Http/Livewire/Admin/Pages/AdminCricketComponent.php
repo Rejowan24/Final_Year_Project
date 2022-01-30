@@ -8,6 +8,7 @@ use App\Models\User;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\AdminReply;
+use App\Notifications\AdminCancle;
 
 class AdminCricketComponent extends Component
 {
@@ -17,7 +18,7 @@ class AdminCricketComponent extends Component
     public $ids;
     public $name;
     public $email;
-    public $address;
+    public $phone;
     public $fields_name;
     public $start_date;
     public $end_date;
@@ -27,8 +28,7 @@ class AdminCricketComponent extends Component
     {
         $this->name = '';
         $this->email = '';
-        $this->address = '';
-        $this->fields_name = '';
+        $this->phone = '';
         $this->start_date = '';
         $this->end_date = '';
         $this->description = '';
@@ -39,7 +39,7 @@ class AdminCricketComponent extends Component
         $validateData = $this->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'address' => 'required|min:3',
+            'phone' => 'required',
             'fields_name' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
@@ -58,7 +58,7 @@ class AdminCricketComponent extends Component
         $this->ids = $booking->id;
         $this->name = $booking->name;
         $this->email = $booking->email;
-        $this->address = $booking->address;
+        $this->phone = $booking->phone;
         $this->fields_name = $booking->fields_name;
         $this->start_date = $booking->start_date;
         $this->end_date = $booking->end_date;
@@ -70,7 +70,7 @@ class AdminCricketComponent extends Component
         $this->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'address' => 'required|min:3',
+            'phone' => 'required',
             'fields_name' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
@@ -83,7 +83,7 @@ class AdminCricketComponent extends Component
             $booking->update([
                 'name' => $this->name,
                 'email' => $this->email,
-                'address' => $this->address,
+                'phone' => $this->phone,
                 'fields_name' => $this->fields_name,
                 'start_date' => $this->start_date,
                 'end_date' => $this->end_date,
@@ -111,7 +111,8 @@ class AdminCricketComponent extends Component
         $booking = Booking::find($id);
         if($booking->is_approved == false)
         {
-            $booking->is_approved = true;
+            $booking->is_approved = 'approved';
+            $booking->status = 'approved';
             $booking->save();
             $booking->user->notify(new AdminReply($booking));
             session()->flash('success','Approved by admin');
@@ -120,9 +121,25 @@ class AdminCricketComponent extends Component
         }
     }
 
+    public function cancled($id)
+    {
+        $booking = Booking::find($id);
+        if($booking->is_approved == false)
+        {
+            $booking->is_approved = "cancled";
+            $booking->status = 'cancled';
+            $booking->save();
+            $booking->user->notify(new AdminCancle($booking));
+            session()->flash('success','Cancle by admin');
+        }else{
+            session()->flash('success','Already Approved by admin');
+        }
+       
+    }
+
     public function render()
     {
-        $booking = Booking::latest()->get();
+        $booking = Booking::latest()->paginate(2);
         return view('livewire.admin.pages.admin-cricket-component',['booking'=>$booking])->layout('layouts.admin_index');
     }
 }

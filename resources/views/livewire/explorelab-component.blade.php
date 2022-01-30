@@ -14,7 +14,7 @@
     <div class="container mb-4">
         <div class="content-box">
             <h1 class="text-center">Innovation Lab</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A praesentium fugit sapiente nam incidunt cum nisi adipisci fugiat officia perferendis illo nobis eum quasi magni beatae, maxime cupiditate minus laudantium?</p>
+            <p>Innovation Lab is the most state-of-the-art research and development lab in Bangladesh. It is a place where students can explore anything independently. They can research and create innovative things according to their own wish. All of these they can do in the innovation lab because the innovation lab can afford all the needs behind this work. This is fully ready for our students where they can explore and experiment with their products as well as find solutions for their own ideas.</p>
         </div>
         <div class="row">
             <div class="col">
@@ -28,8 +28,8 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="site-title">
-                    <h2>Works</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, eligendi illo? Provident sint suscipit facere sequi omnis perferendis ut quo.</p>
+                    <h2>Paper less practice</h2>
+                    <p>Daffodil International University is habituated with the paperless practice of holding various meetings, seminars and workshops. DIU always arranges its academic council meetings with paperless practice where each participant uses laptop containing all documents in soft copy using e-meeting software.</p>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div class="col-md-6 text-center">
                 <div class="site-title">
                     <h2>Facilities</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, eligendi illo? Provident sint suscipit facere sequi omnis perferendis ut quo.</p>
+                    <p>Students can learn new things everyday.Allways arrange a meeting to communicate with each others.They also use the Google tools such as Google Doc, Google Sheet, Google Slides etc. to work collaborate among themselves.</p>
                 </div>
             </div>
 

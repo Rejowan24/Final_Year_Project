@@ -20,14 +20,10 @@
                 </h2>
             </div>
             <div class="col-lg-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, iure dolorum! Nam veniam tempore
-                    tenetur aliquam architecto, hic alias quia quisquam, obcaecati laborum dolores. Ex libero cumque
-                    veritatis numquam placeat?</p>
+                <p>Daffodil International University is a private university located in Dhaka, Bangladesh. The original campus is located at Dhanmondi and the permanent campus is located in Daffodil Smart City, Khagan, Ashulia, Savar which is in Dhaka District.</p>
             </div>
             <div class="col-lg-4">
-                <p>Nam veniam tempore tenetur aliquam
-                    architecto, hic alias quia quisquam, obcaecati laborum dolores. Ex libero cumque veritatis
-                    numquam placeat?</p>
+                <p>The original campus is located at Dhanmondi and the permanent campus is located in Daffodil Smart City, Khagan, Ashulia, Savar which is in Dhaka District. The university campus covers about 150 acres of land with playgrounds, auditorium, basketball court, food court, gymnasium, swimming pool, innovation lab, artificial fountain, golf course, hostel, staff quarter, and other facilities.</p>
             </div>
         </div>
     </div> 
@@ -41,10 +37,7 @@
                     <h2 class="section-title-underline mb-5">
                         <span>Playing Field</span>
                     </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque dolore libero corrupti!
-                        Itaque, delectus?</p>
-                    <p>Modi sit dolor repellat esse! Sed necessitatibus itaque libero odit placeat nesciunt,
-                        voluptatum totam facere.</p>
+                    <p>We organize the Inter University T20 Cricket tournament every year. We also organize annual sports competitions for our students (male and female, indoor and outdoor games). We also participate in international tournaments. International Inter University Cricket tournament Malaysia, in 2014 and 2015 and KIIT University, T20 cricket tournament 2016.</p>
                 </div>
             </div>
             <div class="row">
@@ -55,10 +48,7 @@
                     <h2 class="section-title-underline mb-5">
                         <span>Library</span>
                     </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque dolore libero corrupti!
-                        Itaque, delectus?</p>
-                    <p>Modi sit dolor repellat esse! Sed necessitatibus itaque libero odit placeat nesciunt,
-                        voluptatum totam facere.</p>
+                    <p>Library invites all members of the Daffodil International University -- teachers and students -- to make use of its facilities and collections. The following library policies are instituted to ensure the library is able to provide the best services possible for all users.</p>
                 </div>
             </div>
         </div>

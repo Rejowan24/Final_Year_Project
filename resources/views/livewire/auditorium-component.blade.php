@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <h1>Auditorium</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid vero facere repellendus sint excepturi aliquam nemo hic magni possimus, aspernatur quam autem repellat ab consequatur! Illum minus ut recusandae incidunt.</p>
+                <p>The management of DIU will enjoy full authority to manage and maintain DIU Auditorium. Management can delegate this authority to any personnel of DIU for management and maintenance of specific programs. However, for assistance and support at programs in the auditoria, an officer will be assigned as Assistance and Support (In Charge). One member of staff will be assigned to work under his supervision.</p>
             </div>
             <div class="col-md-4">
                 <img src="{{asset('frontend/img/page/auditorium-2.jpg')}}" alt="..." class="img-thumbnail" style="width: 30rem;">

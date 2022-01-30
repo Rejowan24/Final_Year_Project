@@ -192,9 +192,9 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="{{asset('frontend/img/service/service-6.jpg')}}" data-gallery="serviceGallery" class="service-lightbox">
+              <a href="{{asset('frontend/img/foodcourt.jpg')}}" data-gallery="serviceGallery" class="service-lightbox">
                 <div class="work-img">
-                  <img src="{{asset('frontend/img/service/service-6.jpg')}}" alt="" class="img-fluid">
+                  <img src="{{asset('frontend/img/foodcourt.jpg')}}" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -221,52 +221,52 @@
   
 
     <!-- ======= Counts Section ======= -->
-    {{-- <section class="counts section-bg">
+    <section class="counts">
       <div class="container">
 
         <div class="row">
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
             <div class="count-box">
-              <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
+              <i class="las la-user-friends" style="color: #46d1ff;"></i>
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
+              <p>Teachers</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-3 col-md-6 text-center offset-lg-1" data-aos="fade-up" data-aos-delay="200">
             <div class="count-box">
-              <i class="bi bi-document-folder" style="color: #c042ff;"></i>
+              <i class="las la-users" style="color: #46d1ff;"></i>
               <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
+              <p>Students</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-3 col-md-6 text-center offset-lg-1" data-aos="fade-up" data-aos-delay="400">
             <div class="count-box">
               <i class="bi bi-live-support" style="color: #46d1ff;"></i>
               <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
+              <p>Programs</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
+          {{-- <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
             <div class="count-box">
               <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
               <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hard Workers</p>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 
       </div>
-    </section> --}}
+    </section>
     <!-- End Counts Section --> 
 
-    <!-- ======= Contact Us Section ======= -->
+    {{-- <!-- ======= Contact Us Section ======= -->
     <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-up" >
 
         <div class="section-title">
           <h2>Contact Us</h2>
@@ -325,8 +325,25 @@
 
         </div>
 
+
       </div>
-    </section><!-- End Contact Us Section -->
+    </section><!-- End Contact Us Section --> --}}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="container p-5">
+            <h2 class="welcome-heading">Welcome</h2>
+            <p class="lead">Being established in 2002, Daffodil International University has become a prominent private university in Bangladesh. Our 150 Acre campus is full of life and positive energy, fostering education and innovation for more than 20000 students. Here, students are encouraged to ask questions and think, debate and collaborate with professors to take ownership of their learning.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="container p-5">
+            <img src="{{asset('frontend/img/about/about.jpg')}}" class="img-fluid" alt="Responsive image">
+          </div>
+        </div>
+      </div>
+    </div>
 </main><!-- End #main -->
 
 </div>

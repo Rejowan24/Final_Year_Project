@@ -1,11 +1,10 @@
 <div>
-
-    <section class="section-map padding-top-110">
+    <section class="section-map padding-top-110" style="margin-top: -15px;">
         <div class="container map">
             <div class="row">
                 <div class="col d-flex justify-content-center">
                     <div id="map-container-google-2" class="z-depth-1-half map-container" >
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.904036248962!2d90.32013244633568!3d23.876377684064913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23e874f0acb%3A0x42aeb43055608ff8!2sCricket%20Field!5e0!3m2!1sen!2sbd!4v1632675472352!5m2!1sen!2sbd" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.904036248962!2d90.32013244633568!3d23.876377684064913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23e874f0acb%3A0x42aeb43055608ff8!2sCricket%20Field!5e0!3m2!1sen!2sbd!4v1632675472352!5m2!1sen!2sbd" width="1250" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                       </div>
                 </div>
             </div>
@@ -43,5 +42,30 @@
             </div>
         </div>
     </div>
-
+    <div class="container message-container bg-info">
+        <div class="row">
+            <div class="col-sm-4 offset-sm-9">
+                <div class="card  message-body">
+                    <div class="card-header message-header">
+                        <button class="btn btn-info" id="chatbox-hidden"><i class="lar la-lg la-comment-dots"></i></button>
+                    </div>
+                    <div class="card-body text-body" id="chatbox-body" wire:ignore.self>
+                    @foreach ($receiver as $message)
+                        <div class="card bg-light p-2">
+                            <p>{{$message->message}}</p>
+                        </div>
+                    @endforeach               
+                    </div>
+                    <div class="card-footer card-foot" style="background:seagreen; padding-top:20px;" id="chatbox-footer" wire:ignore.self>
+                        <form class="form-inline">
+                            <div class="form-group d-flex chatbox">
+                                <input type="text" class="form-control-plaintext" wire:model.defer="sender">
+                                <button type="submit" class="btn btn-primary mb-2"  wire:click.prevent="addmessage"><i class="las la-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -56,10 +56,10 @@
                     <form class="box" method="POST" action="{{route('login')}}">
                         @csrf
                         <h1>Login</h1>
-                        <x-jet-validation-errors class="mb-4" />
+                        <x-jet-validation-errors class="mb-4"  style="color:red;"/>
                         <input type="email" name="email" placeholder="Enter email":value="old('email')"> 
                         <input type="password" name="password"  placeholder="Password"> 
-                        <a class="forgot text-white" href="#">Forgot password?</a> 
+                        <a class="forgot text-white" href="{{ route('password.request') }}">Forgot password?</a> 
                         <input type="submit" name="" value="login" >
                     </form>
                 </div>

@@ -119,8 +119,8 @@
                                         <button class="btn btn-primary" type="submit" style="margin-left: -3rem;" wire:click.prevent="submit()" >Book Now</button>
                                         <button class="btn btn-success">
                                             {{-- @livewire('booking-list-component') --}}
-                                            {{-- <a class="btn" href="{{route('show.list')}}" wire:click="check()">click</a> --}}
-                                            Booked Date
+                                            <a class="btn" href="{{route('show.list')}}" wire:click="check()">click</a>
+                                            {{-- Booked Date --}}
                                         </button>
                                         <div class="form-group form-check" style="margin-top: 1rem;">
                                             <input type="checkbox" class="form-check-input" id="Checkbox">

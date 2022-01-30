@@ -14,15 +14,15 @@
     <div class="container py-3" style="background: #dfe6e9;">
         <div class="row">
             <div class="col-sm-4">
-                <img src="{{asset('frontend/img/about.jpg')}}" style="width: 100%;" alt="">
+                <img src="{{asset('frontend/img/food-court/foodcourt1.jpg')}}" style="width: 100%;" alt="">
             </div>
             <div class="col-sm-4">
-                <img src="{{asset('frontend/img/about.jpg')}}" style="width: 100%;" alt="">
+                <img src="{{asset('frontend/img/food-court/foodcourt.jpg')}}" style="width: 100%;" alt="">
             </div>
             <div class="col-sm-4">
                 <h3>Food Court</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore neque non nesciunt praesentium similique. Nihil adipisci iusto quia illum minus harum quo, dolorum sunt reprehenderit eligendi debitis veritatis tenetur eum.</p>
-                <a href="{{route('table.reserve')}}" class="btn btn-primary" style="border-radius: 25px; margin-top:2rem;">Reserve Table</a>
+                <p>The Food Court of Daffodil International University offers a Great tasting and Delicious Varieties foods menu to our Valued costumers. The Menu Changes by Seasonal and it is given a better services by Professional Service staff. The Restaurant would be a one of the best Restauran.</p>
+                <a href="{{route('table.reserve')}}" class="btn btn-primary" style="border-radius: 25px; margin-top:1rem; z-index:1; position: absolute;">Reserve Table</a>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                             <div class="single-dishes">
                                 <div class="dish-img">
                                {{-- <img src="{{asset('frontend/img/menu-item/pd1.png')}}" style="width: inherit;" alt=""> --}}
-                                    <img src="{{$food->image}}"  alt="">
+                                    <img src="{{asset('frontend/img/food-court/'.$food->image)}}"  alt="">
                                 </div>
                                 <div class="dish-content">
                                     <h6><a href="single-dish.html">{{$food->name}}</a></h6>

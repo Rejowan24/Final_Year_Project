@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\TableReservation;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 class TableReserveComponent extends Component
 {
@@ -66,6 +68,14 @@ class TableReserveComponent extends Component
     
     public function render()
     {
+        if(Route::has('login')){
+            if(Auth::user()){
+                return view('livewire.table-reserve-component')->layout('layouts.master');
+            }
+
+            return view('auth.login')->layout('layouts.master');
+
+        }
         return view('livewire.table-reserve-component')->layout('layouts.master');
     }
 }

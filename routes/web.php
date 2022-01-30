@@ -24,13 +24,14 @@ use App\Http\Livewire\ExplorelabComponent;
 use App\Http\Livewire\VisitPermissionComponent;
 use App\Http\Livewire\SlotBookingComponent;
 use App\Http\Livewire\SlotListComponent;
-use App\Http\Livewire\BookingListComponent;
+use App\Http\Livewire\CheckBookingListComponent;
 use App\Http\Livewire\user\UserDashboardComponent;
 use App\Http\Livewire\admin\AdminDashboardComponent;
 use App\Http\Livewire\admin\AdminAddCategoryComponent;
 use App\Http\Livewire\admin\AdminEditCategoryComponent;
 use App\Http\Livewire\admin\AdminAddProductComponent;
 use App\Http\Livewire\admin\AdminEditProductComponent;
+use App\Http\Livewire\admin\AdminInnovationLabComponent;
 use App\Http\Livewire\admin\pages\AdminCricketComponent;
 use App\Http\Livewire\admin\pages\AdminBooksItemsComponent;
 use App\Http\Livewire\admin\pages\AdminDriverlistComponent;
@@ -73,13 +74,13 @@ Route::get('/visiting/permission', VisitPermissionComponent::class);
 Route::get('/slot/booking', SlotBookingComponent::class)->name('slot.booking');
 Route::get('/slot/list/checking', SlotListComponent::class)->name('slot.list');
 Route::get('/table/reserve', App\Http\livewire\TableReserveComponent::class)->name('table.reserve');
-
+Route::get('/download/file/{id}',[BookingComponent::class, 'download'])->name('download.pdf');
 
 // for user
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class )->name('user.dashboard');
     Route::get('/booking', BookingComponent::class);
-    Route::get('/show/booking/list', BookingListComponent::class)->name('show.list');
+    Route::get('/show/booking/list', CheckBookingListComponent::class)->name('show.list');
 });
 
 
@@ -87,6 +88,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/add/category', AdminAddCategoryComponent::class)->name('admin.addcategory');
+    Route::get('/Innovationlab/permission', AdminInnovationLabComponent::class)->name('admin.innovationlab');
     Route::get('/admin/edit/category{category_slug}', AdminEditCategoryComponent::class)->name('admin.editcategory');
     Route::get('admin/product/add', AdminAddProductComponent::class )->name('admin.addproduct');
     Route::get('admin/product/edit/{product_slug}', AdminEditProductComponent::class )->name('admin.editproduct');
@@ -94,9 +96,12 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
 
 
     // all pages here...
-    Route::get('admin/cricket', AdminCricketComponent::class);
+    Route::get('admin/bookinglist', AdminCricketComponent::class);
     Route::get('admin/bookitems', AdminBooksItemsComponent::class);
     Route::get('admin/driverlist', AdminDriverlistComponent::class)->name('admin.driverlist');
+    Route::get('admin/foodcourt', App\Http\livewire\admin\pages\AdminFoodcourtComponent::class)->name('admin.foodcourt');
+    Route::get('admin/greengarden', App\Http\livewire\admin\pages\AdminGreenGardenComponent::class)->name('admin.greengarden');
     Route::get('/booking/pending', AdminCricketComponent::class)->name('booking.pending');
-    Route::put('/booking/approve/{id}', AdminCricketComponent::class)->name('booking.approve');
+    Route::put('/booking/approve/{id}', AdminCricketComponent::class)->name('booking.approved');
+    Route::put('/booking/cancle/{id}', AdminCricketComponent::class)->name('booking.Cancled');
 });

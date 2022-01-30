@@ -62,7 +62,7 @@
 
 <x-guest-layout>
 
-    <div class="container-fluid register-container" style="margin-top: 8rem;">
+    <div class="container-fluid register-container" style="margin-top: 6rem;">
         <div class="row">
             <div class="col-md-4 offset-4">
                 <div class="heading-box">

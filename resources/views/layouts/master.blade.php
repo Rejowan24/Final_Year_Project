@@ -145,9 +145,9 @@
                             height="22" alt="" loading="lazy" />{{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
+                        {{-- <li>
                             <a class="dropdown-item" href="{{route('user.dashboard')}}">dashboard</a>
-                        </li>
+                        </li> --}}
                         <li>
                           <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         </li>
@@ -223,12 +223,12 @@
 
     <!-- Template Main JS File -->
   <script src="{{asset('frontend/js/main.js')}}"></script>
+  <script src="{{asset('frontend/js/chatbox.js')}}"></script>
+  <script src="{{asset('frontend/js/subdropdown.js')}}"></script>
   <script src="{{asset('frontend/js/file.js')}}"></script>
   <script src="{{asset('frontend/js/checkbox.js')}}"></script>
   <script src="{{asset('frontend/vendor/sweet_alert/sweetalert2.min.js')}}"></script>
   <script src="{{asset('backend/admin/js/jquery-3.5.1.js')}}"></script>
- 
-  <script src="{{asset('backend/admin/js/datatables.min.js')}}"></script>
  
 
 

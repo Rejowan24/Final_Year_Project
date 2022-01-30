@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h1>Basketball Field</h1>
-                    <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.</p>
+                    <p>As outdoor games we regularly practice Cricket, Football and Basketball. But in our annual sports competition we organize volleyball, athletics, kabadi also. We also participate in all renowned university tournaments every year. Like Bangabandhu Inter University Sports Champs, ULAB fair play cup T20, Clemon indoor uni cricket, wings uni futsal, faraz gold cup football, east west winters mash etc.</p>
                 </div>
                     <div class="col-md-4">
                         <div class="p-2">

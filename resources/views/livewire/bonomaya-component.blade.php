@@ -4,9 +4,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="p-5 mt-md-4" style="margin-left: -3rem;">
-                    <h2 class="h1 pb-3">heading one</h2>
-                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error earum mollitia temporibus libero itaque quisquam, recusandae, totam eligendi fugiat in ducimus nemo voluptate! Soluta quo, suscipit alias perspiciatis voluptatum maxime, ullam, dicta incidunt iste nemo rem nisi praesentium nam!</p>
-                    <a class="btn text-black btn-color" href="#">Book Now</a>
+                    <h2 class="h1 pb-3">Bonomaya</h2>
+                    <p class="text-muted">Banamaya is a very captivating place. Culture, stories, chats, songs, ceremonies are all held here.</p>
+                    <a class="btn text-black btn-color" href="{{url('/booking')}}">Book Now</a>
                 </div>
             </div>
             <div class="col-md-4 p-4">
